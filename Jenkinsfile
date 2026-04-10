@@ -29,4 +29,11 @@ pipeline {
         //     }
         // }
     }
+    post {
+        success {
+            echo 'Build successful! Archiving files...'
+            // This grabs everything except the heavy venv folder
+            archiveArtifacts artifacts: '**/*', excludes: 'venv/**'
+        }
+    }
 }
