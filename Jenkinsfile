@@ -11,7 +11,7 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 sh '''
-                python3.14.4 -m venv venv
+                python3.14 -m venv venv
                 . venv/bin/activate
                 pip install --upgrade pip
                 pip install -r requirements.txt
@@ -23,7 +23,7 @@ pipeline {
         //         sh '''
         //         . venv/bin/activate
         //         # Simple syntax check
-        //         python3.14.4 -m py_compile main.py
+        //         python3.14 -m py_compile main.py
         //         # Add pytest command here once you have tests
         //         '''
         //     }
